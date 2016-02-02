@@ -1,0 +1,61 @@
+extend layout
+
+block extra-scripts
+  script(src='/js/jquery-ui.min.js')
+
+block extra-css
+  link(rel='stylesheet', href='/css/jquery-ui.min.css')
+  link(rel='stylesheet', href='/css/jquery-ui.structure.css')
+  link(rel='stylesheet', href='/css/jquery-ui.theme.css')
+
+block content
+
+
+  .row
+
+    .col-sm-3
+      b 
+        | You have 15 days remaining
+
+    .col-sm-6
+      .well.bs-component
+        form(class="form-horizontal")
+          fieldset
+            legend Vacation Request Form
+            .form-group.is-empty
+              label.col-md-2.control-label(for='inputName') Name
+              .col-md-10
+                input#inputName.form-control(type='name', placeholder='Name')
+              span.material-input
+            .form-group
+              label.col-md-2.control-label(for='startDate') Start Date
+              .col-md-4
+                input#startDate.form-control(type='text', placeholder='dd/mm/yy')
+            .form-group
+              label.col-md-2.control-label(for='endDate') End Date
+              .col-md-4
+                input#endDate.form-control(type='text', placeholder='dd/mm/yy')
+            .form-group
+              label.col-md-2.control-label(for='select111') Notify Team Lead
+              .col-md-10
+                select#select111.form-control(placeholder="Select")
+                  option(disabled selected) Select your option
+                  option Adam Lynch
+                  option Brandon
+                  option Peter
+              span.material-input
+            .form-group
+              .col-md-10.col-md-offset-2
+                button.btn.btn-default(type='button') Cancel
+                button.btn.btn-primary(type='submit') Submit
+        
+    .col-sm-3
+      b 
+        | Out of 20 
+        
+        
+        
+        
+        
+        
+        

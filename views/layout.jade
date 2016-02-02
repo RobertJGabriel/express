@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+    title #{title} - Intranet YAY!
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-material-design.min.css')
+    link(rel='stylesheet', href='/css/ripples.min.css')
+    link(rel='stylesheet', href='/stylesheets/styles.css')
+    block extra-css
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  body
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/')
+            .logo
+              img(src='assets/logo.png')
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='/') Home
+            li
+              a(href='/internship') Internships
+            li
+              a(href='/manageHolidays') Hoildays
+            li
+              a(href='/') Food Court
+            li
+              a(href='/idea') Idea Hub
+            li.dropdown
+              a.dropdown-toggle(href='', data-target='#', data-toggle='dropdown')
+                |Fun Stuff
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='/nightsout') NightsOut
+                li
+                  a(href='/nightsout') Running Clubs
+                li
+                  a(href='/nightsout') Game Clubs
+
+            li.dropdown
+              a.dropdown-toggle(href='bootstrap-elements.html', data-target='#', data-toggle='dropdown')
+                |Starter Pack
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='/manageHolidays') Manage Holidays
+                li
+                  a(href='/swag') Swag pack
+                li
+                  a(href='/companylayout') Teams/People
+
+          // /.nav-collapse
+    .container
+      block content
+    // /.container
+
+  script(src="/scripts/jquery.min.js")
+  script(src='/js/bootstrap.min.js')
+  script(src='/js/material.js')
+  script(src='/js/ripples.js')
+  script(src="/scripts/knockout-latest.js")
+  script(src='/js/res.js')
+  script(src='/scripts/internal.js')
+  block extra-scripts
