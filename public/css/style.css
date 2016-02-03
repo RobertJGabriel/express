@@ -1,3 +1,31 @@
+.header-panel {
+  background-color: #009587;
+  height: 144px;
+  position: relative;
+  z-index: 3;
+}
+.header-panel h1 {
+  bottom: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 35px;
+  position: absolute;
+}
+.pages {
+  margin-top: -40px;
+  z-index: 4;
+}
+body {
+  background-color: white !important;
+}
+.footer {
+  clear: both;
+  height: 150px;
+  margin-top: -150px;
+  padding-top: 20px;
+  position: relative;
+}
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.

@@ -31,7 +31,7 @@ gulp.task('scripts', ['third-party-scripts'], function() {
 });
 
 
-gulp.task('less', ['third-party-less', ], function() {
+gulp.task('less', function() {
     gulp.src('./src/styles/less/style.less') // path to your file
         .pipe(less()).pipe(gulp.dest('./public/css/'));
 });
