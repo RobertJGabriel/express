@@ -28,8 +28,6 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', function (req, res) {
     var url = "https://account.xbox.com/en-us/gameclips/loadByUser?gamerTag=";
     var gamerTag = "";
-
-
     req.query['gamerTag'] ? gamerTag = req.query['gamerTag'] : gamerTag = "E";
 
     console.log(gamerTag);
