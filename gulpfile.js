@@ -7,39 +7,37 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
-gulp.task('third-party-scripts', function () {
-    return gulp.src(['node_modules/**/jquery.min.js', 'node_modules/**/material.js', 'node_modules/**/bootstrap.js', 'node_modules/**/ripples.js'])
-        .pipe(debug())
-        .pipe(flatten())
-        .pipe(gulp.dest('./public/js'));
+
+gulp.task('third-party-scripts', function() {
+    return gulp.src(['node_modules/**/jquery.min.js',
+        'node_modules/**/material.js',
+        'node_modules/**/bootstrap.js',
+        'node_modules/**/ripples.js'
+    ]).pipe(debug()).pipe(flatten()).pipe(gulp.dest('./public/js'));
 });
 
 
-gulp.task('third-party-less', function () {
-    gulp.src(['node_modules/robin-less/less/**/*'])
-        .pipe(gulp.dest('./src/styles/less'));
-
-    gulp.src(['node_modules/bootstrap-material-design/dist/css/ripples.min.css'])
-        .pipe(gulp.dest('./public/css'));
+gulp.task('third-party-less', function() {
+    gulp.src(['node_modules/robin-less/less/**/*']).pipe(gulp.dest(
+        './src/styles/less'));
+    gulp.src([
+        'node_modules/bootstrap-material-design/dist/css/ripples.min.css'
+    ]).pipe(gulp.dest('./public/css'));
 });
 
 
-gulp.task('scripts', ['third-party-scripts'], function () {
-    return gulp.src('src/scripts/*.js')
-        .pipe(gulp.dest('./public/js'));
+gulp.task('scripts', ['third-party-scripts'], function() {
+    return gulp.src('src/scripts/*.js').pipe(gulp.dest('./public/js'));
 });
 
 
-gulp.task('less', ['third-party-less', ], function () {
+gulp.task('less', ['third-party-less', ], function() {
     gulp.src('./src/styles/less/style.less') // path to your file
-        .pipe(less())
-        .pipe(gulp.dest('./public/css/'));
-
+        .pipe(less()).pipe(gulp.dest('./public/css/'));
 });
 
 
-
-gulp.task('img', function () {
+gulp.task('img', function() {
     return gulp.src('./src/img/*').pipe(imagemin({
         progressive: true,
         svgoPlugins: [{
@@ -48,9 +46,6 @@ gulp.task('img', function () {
         use: [pngquant()]
     })).pipe(gulp.dest('./public/img/'));
 });
-
-
-
 
 
 gulp.task('default', ['scripts', 'less', 'img']);
