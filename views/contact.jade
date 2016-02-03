@@ -6,7 +6,21 @@ block content
       .row
         .col-md-3.col-xs-3.col-sm-3
         .col-md-6.col-xs-6.col-sm-6
-        .col-md-6.col-xs-6.col-sm-6
-    footer.footer
-      .container
-        p.text-muted Place sticky footer content here.
+          h1 Contact Us
+          hr
+          form.form-horizontal.well.bs-component
+            .form-group
+              .col-md-10
+                input#name.form-control(type='text', placeholder='name')
+            .form-group
+              .col-md-10
+                input#inputEmail.form-control(type='email', placeholder='Email')
+            .form-group
+              .col-md-10
+                textarea#textArea.form-control(rows='3')
+            .form-group
+              .col-md-10.col-md-offset-2   
+                button.btn.btn-default(type='button') Cancel
+                button.btn.btn-primary(type='submit') Submit
+        .col-md-3.col-xs-3.col-sm-3
+

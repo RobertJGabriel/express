@@ -28,10 +28,43 @@ html(style='min-height: 100%;position: relative;')
             li
               a(href='/contact') Contact
 
-    .container(style='min-height: 100%;')
+    .container(style='min-height: 100vh;')
       block content
-
     footer.footer
+      .row(style='margin-left:0px;margin-right:0px;')
+        .col-md-4.col-sm-4
+          h5 About
+          ul.nav.nav-pills.nav-stacked(style='max-width: 300px;')
+            li.active
+              a(href='/') Home
+            li
+              a(href='/about') About
+            li
+              a(href='/contact') Contact
+      
+
+        .col-md-4.col-sm-4
+          h5 Contact Us
+          form.form-horizontal
+            .form-group
+              .col-md-10
+                input#name.form-control(type='text', placeholder='name')
+            .form-group
+              .col-md-10
+                input#inputEmail.form-control(type='email', placeholder='Email')
+            .form-group
+              .col-md-10
+                textarea#textArea.form-control(rows='3')
+            .form-group
+              .col-md-10.col-md-offset-2   
+                button.btn.btn-default(type='button') Cancel
+                button.btn.btn-primary(type='submit') Submit
+        .col-md-4.col-sm-4
+          h5 Find Us
+          iframe.img-responsive(frameborder='0', style='border:0', src='https://www.google.com/maps/embed/v1/place?q=Eiffel%20Tower%2C%20Avenue%20Anatole%20France%2C%20Paris%2C%20France&key=AIzaSyAFUKSu28KvFk67YcSlUWeUJ2TpcifSVmQ')
+
+
+
   script(src="/js/jquery.min.js")
   script(src='/js/bootstrap.js')
   script(src='/js/ripples.js')

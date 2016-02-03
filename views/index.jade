@@ -7,9 +7,9 @@ block content
         .col-md-3.col-xs-3.col-sm-3
         .col-md-6.col-xs-6.col-sm-6
           each thing in data.GameClips
-            .panel.panel-primary
-              .panel-heading
-                h3.panel-title #{thing.TitleName} #{thing.UploadTime}
-              .panel-body
-                video.img-responsive(src='#{thing.ClipUri}', class='img-responsive', preload='none', width='500', poster='#{thing.Preview}', height='500', controls='controls')
+           .panel.panel-default
+             .panel-body
+               video.img-responsive(src='#{thing.ClipUri}', class='img-responsive' style="background: rgba(255,255,255,.08);", preload='none', width='500', poster='#{thing.Preview}', height='500', controls='controls')
+             .panel-footer
+               h3.panel-title #{thing.TitleName} #{thing.UploadTime}
         .col-md-6.col-xs-6.col-sm-6

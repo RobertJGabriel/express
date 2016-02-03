@@ -49,3 +49,4 @@ gulp.task('img', function() {
 
 
 gulp.task('default', ['scripts', 'less', 'img']);
+gulp.task('move', ['third-party-scripts', 'third-party-less']);
