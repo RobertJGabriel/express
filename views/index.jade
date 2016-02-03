@@ -1,102 +1,17 @@
+
+             
 extend layout
 
 block content
-    .banner
-      #myCarousel.carousel.slide(data-ride='carousel')
-        ol.carousel-indicators
-          li.active(data-target='#myCarousel', data-slide-to='0')
-          li(data-target='#myCarousel', data-slide-to='1')
-          li(data-target='#myCarousel', data-slide-to='2')
-          li(data-target='#myCarousel', data-slide-to='3')
-        .carousel-inner(role='listbox')
-          .item
-            img(src='/assets/banner1.jpg', alt='Chania')
-          .item
-            img(src='/assets/banner2.jpg', alt='Chania')
-          .item.active
-            img(src='/assets/banner3.jpg')
-          .item
-            img(src='/assets/banner4.jpg')
-
-
-            
-    .row
-      .col-sm-4
-        .panel.panel-danger
-          .panel-heading
-            h3.panel-title Starter Pack 
-          .panel-body
-            .list-group
-              .list-group-item
-                .row-action-primary
-                  i.material-icons Hols
-                .row-content
-                  .least-content
-                  h4.list-group-item-heading
-                    a(href='/manageHolidays') Manage Holidays
-                  p.list-group-item-text Let someone know about your break
-              .list-group-separator
-              .list-group-item
-                .row-action-primary
-                  i.material-icons Swag
-                .row-content
-                  .least-content
-                  h4.list-group-item-heading
-                    a(href='/swag') Swag pack
-                  p.list-group-item-text All the goodies you get day one!
-              .list-group-separator
-              .list-group-item
-                .row-action-primary
-                  i.material-icons Peeps
-                .row-content
-                  .least-content
-                  h4.list-group-item-heading
-                    a(href='/companylayout') People
-                  p.list-group-item-text Not sure who you just past in the corridor?
-              .list-group-separator
-      .col-sm-4
-        .panel.panel-info
-          .panel-heading
-            h3.panel-title Up Coming Events
-          .panel-body
-            .list-group
-              .list-group-item
-                .row-action-primary
-                  i.material-icons Rugby
-                .row-content
-                  .least-content Mon 29th
-                  h4.list-group-item-heading Soccer 9pm
-                  p.list-group-item-text Donec id elit non mi porta gravida at eget metus.
-              .list-group-separator
-              .list-group-item
-                .row-action-primary
-                  i.material-icons Xmas
-                .row-content
-                  .least-content 24/12/2016
-                  h4.list-group-item-heading Office closes for Christmas
-                  p.list-group-item-text Seeing the closing dates below
-              .list-group-separator
-              .list-group-item
-                .row-action-primary
-                  i.material-icons Soccer
-                .row-content
-                  .least-content 31 th 
-                  h4.list-group-item-heading Lunch (open invite)
-                  p.list-group-item-text Maecenas sed diam eget risus varius blandit.
-              .list-group-separator
-      .col-sm-4
-        .panel.panel-warning
-          .panel-heading
-            h3.panel-title Handy Links
-          .panel-body
-            ol
-              li
-                a(href='http://teamwork.com/projects') Projects
-              li
-                a(href='http://teamwork.com/chat') Chat
-              li
-                a(href='http://teamwork.com/desk') Desk
-              li
-                a(href='') Deveolper Docs
-              li
-                a(href='') Desk Docs
+    .container-fluid.main(style='height: 100%;')
+      div(style='margin-bottom:100px')
+      .row
+        .col-md-3.col-xs-3.col-sm-3
+        .col-md-6.col-xs-6.col-sm-6
+          each thing in data.GameClips
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title #{thing.TitleName} #{thing.UploadTime}
+              .panel-body
+                video.img-responsive(src='#{thing.ClipUri}', class='img-responsive', preload='none', width='500', poster='#{thing.Preview}', height='500', controls='controls')
+        .col-md-6.col-xs-6.col-sm-6
